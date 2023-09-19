@@ -13,14 +13,21 @@ export class CountryListComponent implements OnInit, OnDestroy {
   countries: CountryModel[] = [];
   countriesSub: Subscription;
   filteredCountriesSub: Subscription;
+  isLoading = false;
+  noAvailableCountries = true;
 
   constructor(private countriesService: CountriesService) {
   }
 
   ngOnInit() {
-    this.filteredCountriesSub = this.countriesService.filteredCountries.subscribe(data => this.countries = data);
-    this.countriesSub = this.countriesService.countries.subscribe(data => this.countries = data);
+    this.filteredCountriesSub = this.countriesService.filteredCountries.subscribe(data => {
+      this.countries = data;
+    });
+    this.countriesSub = this.countriesService.countries.subscribe(data => {
+      this.countries = data;
+    });
     this.countriesService.fetchAllCountries();
+    this.isLoading = true;
   }
 
 

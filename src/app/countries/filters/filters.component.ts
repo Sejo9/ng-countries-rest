@@ -16,10 +16,11 @@ export class FiltersComponent {
   constructor(private countriesService: CountriesService){}
 
   onSearch(){
+    this.searchRegion = "";
     this.countriesService.filterBySearch(this.searchValue);
   }
 
-  onRegionSelected(){
-
+  onRegionSelected(event: string){
+    this.countriesService.filterByRegion(event);
   }
 }

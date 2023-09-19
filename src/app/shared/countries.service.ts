@@ -11,6 +11,7 @@ export class CountriesService {
   filteredCountries = new BehaviorSubject<CountryModel[]>(null);
 
   url: string = "https://restcountries.com/v3.1/all";
+  searchValue: string = "";
   wasfiltered: boolean = false;
 
   constructor(private http: HttpClient) {}
@@ -82,6 +83,7 @@ export class CountriesService {
   }
 
   filterBySearch(name: string){
+    this.searchValue = name;
     if(name === ""){
       this.fetchAllCountries();
     }else{
@@ -91,7 +93,16 @@ export class CountriesService {
     }
   }
 
-  filterByRegion(){
-
+  filterByRegion(region:string){
+    if(this.searchValue === ""){
+      let filtered = this.countries.value.filter(country => country.region.toLowerCase() === region.toLowerCase())
+      this.filteredCountries.next(filtered);
+      this.wasfiltered = true;
+    }else if(this.searchValue !== ""){
+      let filtered = this.countries.value.filter(country => country.countryName.toLowerCase().includes(this.searchValue.toLowerCase()));
+      let regionFiltered = filtered.filter(country => country.region.toLowerCase() === region.toLowerCase());
+      this.filteredCountries.next(regionFiltered);
+      this.wasfiltered = true;
+    }
   }
 }
