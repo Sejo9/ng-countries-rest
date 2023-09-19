@@ -22,3 +22,9 @@ p, h3 {
 p {
   font-size: 14px;
 }
+
+@media(max-width: 375px){
+  #country-container {
+    margin-bottom: 20px;
+  }
+}

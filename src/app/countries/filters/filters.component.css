@@ -79,16 +79,25 @@ select {
   pointer-events: none;
 }
 
-/*#region-select::before {
-  border-left: var(--size) solid transparent;
-  border-right: var(--size) solid transparent;
-  border-bottom: var(--size) solid black;
-  top: 40%;
-}*/
-
 #region-select::after {
   border-left: var(--size) solid transparent;
   border-right: var(--size) solid transparent;
   border-top: var(--size) solid var(--text);
   top: 50%;
+}
+
+@media(max-width: 375px){
+  #container{
+    flex-direction: column;
+    padding: 0 5% 50px 5%;
+  }
+
+  #name-search {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  #region-select {
+    width: 230px;
+  }
 }

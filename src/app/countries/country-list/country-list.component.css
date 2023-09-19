@@ -18,3 +18,12 @@ h2 {
   color: var(--text);
   text-align: center;
 }
+
+@media(max-width: 375px){
+  #country-list {
+    display: flex;
+    flex-direction: column;
+    padding-right: 5%;
+    padding-left: 5%;
+  }
+}
