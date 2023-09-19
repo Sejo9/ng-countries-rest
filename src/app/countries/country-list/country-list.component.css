@@ -1,0 +1,20 @@
+#container {
+  display: flex;
+  flex-direction: column;
+}
+
+#country-list {
+  display: grid;
+  grid-template-columns: 20% 20% 20% 20%;
+  padding-right: 3%;
+  padding-left: 3%;
+  row-gap: 5vw;
+  justify-content: space-between;
+  background-color: var(--background);
+  padding-bottom: 50px;
+}
+
+h2 {
+  color: var(--text);
+  text-align: center;
+}

@@ -1,0 +1,11 @@
+<div id="country-container" (click)="onClick()">
+  <img src="{{ country.flag }}" alt="{{ country.countryName }}">
+  <div id="country-details">
+    <h3>{{ country.countryName }}</h3>
+    <p>
+      <strong>Population:</strong> {{ country.population }} <br>
+      <strong>Region:</strong> {{ country.region }} <br>
+      <strong>Capital:</strong> {{ country.capital }}
+    </p>
+  </div>
+</div>

@@ -1,0 +1,32 @@
+<div id="container">
+  <div>
+    <button id="back-btn" (click)="onNavigateBack()"><fa-icon [icon]="backIcon"></fa-icon>Back</button>
+  </div>
+  <div id="d1" *ngIf="country">
+    <img src="{{country.flag}}" alt="{{country.countryName}}">
+    <div id="info">
+      <h2>{{country.countryName}}</h2>
+      <div id="details">
+        <div>
+          <p><strong>Native Name:</strong> {{country.nativeName}}</p>
+          <p><strong>Population:</strong> {{country.population}}</p>
+          <p><strong>Region:</strong> {{country.region}}</p>
+          <p><strong>Sub Region:</strong> {{country.subRegion}}</p>
+          <p><strong>Capital:</strong> {{country.capital}}</p>
+        </div>
+
+        <div>
+          <p><strong>Top Level Domain:</strong> {{country.topLevelDomain}}</p>
+          <p><strong>Currencies:</strong> {{country.currencies}}</p>
+          <p><strong>Language:</strong> {{country.languages}}</p>
+        </div>
+      </div>
+      <div id="border-countries">
+        <p style="margin-right: 20px"><strong>Border Countries:</strong></p>
+        <div id="borders-container">
+          <button class="border" *ngFor="let border of country.borders" (click)="onNavigateToBorderCountry(border)">{{border}}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

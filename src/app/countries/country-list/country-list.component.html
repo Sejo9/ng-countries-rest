@@ -1,0 +1,7 @@
+<div id="container">
+  <h2 *ngIf="!countries">Loading...</h2>
+  <h2 *ngIf="countries.length === 0">No Available Results</h2>
+  <div id="country-list">
+    <app-country *ngFor="let country of countries" [country]="country"></app-country>
+  </div>
+</div>

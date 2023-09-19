@@ -1,0 +1,16 @@
+<div id="container">
+  <div id="name-search">
+    <fa-icon [icon]="searchIcon"></fa-icon>
+    <input placeholder="Search for a country..." type="search" [(ngModel)]="searchValue" (search)="onSearch()">
+  </div>
+  <div id="region-select">
+    <select>
+      <option selected disabled>Filter by Region</option>
+      <option value="Africa">Africa</option>
+      <option value="Americas">Americas</option>
+      <option value="Asia">Asia</option>
+      <option value="Europe">Europe</option>
+      <option value="Oceania">Oceania</option>
+    </select>
+  </div>
+</div>

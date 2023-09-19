@@ -1,0 +1,24 @@
+#country-container {
+  background-color: var(--foreground);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#country-details {
+  padding: 0 10% 10% 10%;
+}
+
+img {
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+  object-fit: cover;
+  height: 150px;
+}
+
+p, h3 {
+  color: var(--text);
+}
+
+p {
+  font-size: 14px;
+}

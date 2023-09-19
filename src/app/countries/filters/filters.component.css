@@ -1,0 +1,94 @@
+#container {
+  background-color: var(--background);
+  padding: 0 3% 50px 3%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#name-search {
+  display: flex;
+  align-items: center;
+  width: 35%;
+  position: relative;
+  background-color: var(--foreground);
+  border-radius: 5px;
+}
+
+fa-icon {
+  position: absolute;
+  color: var(--hint);
+  left: 20px;
+}
+
+input {
+  appearance: none;
+  /* safari */
+  -webkit-appearance: none;
+  /* other styles for aesthetics */
+  width: 100%;
+  background-color: var(--foreground);
+  color: var(--text);
+  padding: 15px 15px 15px 50px;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: var(--hint);
+  opacity: 1; /* Firefox */
+}
+
+:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: var(--hint);
+}
+
+::-ms-input-placeholder { /* Microsoft Edge */
+  color: var(--hint);
+}
+
+#region-select {
+  width: 260px;
+  position: relative;
+}
+
+select {
+  appearance: none;
+  /* safari */
+  -webkit-appearance: none;
+  /* other styles for aesthetics */
+  width: 100%;
+  font-size: 14px;
+  padding: 15px;
+  background-color: var(--foreground);
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: var(--text);
+  cursor: pointer;
+}
+
+#region-select::before,
+#region-select::after {
+  --size: 0.3rem;
+  position: absolute;
+  content: "";
+  right: 1rem;
+  pointer-events: none;
+}
+
+/*#region-select::before {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-bottom: var(--size) solid black;
+  top: 40%;
+}*/
+
+#region-select::after {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-top: var(--size) solid var(--text);
+  top: 50%;
+}
