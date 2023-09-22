@@ -26,8 +26,10 @@ export class CountryListComponent implements OnInit, OnDestroy {
     this.countriesSub = this.countriesService.countries.subscribe(data => {
       this.countries = data;
     });
-    this.countriesService.fetchAllCountries();
-    this.isLoading = true;
+    if(!this.countriesService.countries.value){
+      this.countriesService.fetchAllCountries();
+      this.isLoading = true;
+    }
   }
 
 

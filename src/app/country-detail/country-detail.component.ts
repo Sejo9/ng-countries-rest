@@ -26,9 +26,9 @@ export class CountryDetailComponent implements OnInit, OnDestroy {
         this.countriesService.fetchAllCountries();
       }
 
-      if(this.countriesService.wasfiltered){
+      /* if(this.countriesService.wasfiltered){
         this.countriesService.fetchAllCountries();
-      }
+      } */
 
       this.countriesSub = this.countriesService.countries.subscribe(countries => {
 
